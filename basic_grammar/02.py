@@ -1,4 +1,5 @@
 '''
+'''
 # input single value
 a = input("숫자 입력 : ")
 print(a)
@@ -18,4 +19,3 @@ print(a / b)   # 0.6666666...
 print(a // b)   # 0 (몫을 구하는 것)
 print(a % b)   # 2 (modulo)
 print(a**b) #2^3 (2를 3번 곱한 것.)
-'''
