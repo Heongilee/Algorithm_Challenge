@@ -4,5 +4,7 @@
 input.txt에 인풋 값들을 미리 넣어놓는다.
 
 파일에서 값을 읽어와서 문제를 채점하려면...
+import os
 import sys
-sys.stdin = open("input.txt", "rt")
+
+sys.stdin = open(os.getcwd() + "\\AA\\input.txt", "rt")
