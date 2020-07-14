@@ -56,24 +56,24 @@ def reverse_1(x):
         x //= 10
     return res
     
-def isPrime(x):
+def isPrime_1(x):
     if(x == 1):
         return False
-    cnt = [0] * (x + 1)
-    for i in range(2, x):
-        if(cnt[i] == 0):
-            for j in range(i, x + 1, i):
-                if(j == x):
-                    return False
-                cnt[j] = 1
+    # 1 * 16 = 16
+    # 2 * 8 = 16
+    # 따라서, 넘어온 값의 절반만 순회해서 검사해도 된다.
+    for i in range(2, x // 2 + 1):
+        if(x % i == 0):
+            return False
     else:
         return True
-
+        
 N = int(input())
 a = list(map(int, input().split()))
 
 for e in a:
     r = reverse_1(e)
     # r = reverse(e)
-    if(isPrime(r)):
+    # if(isPrime(r)):
+    if(isPrime_1(r)):
         print(r, end=' ')
