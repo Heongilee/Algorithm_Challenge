@@ -1,5 +1,5 @@
-import sys
-sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
+# import sys
+# sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
 
 # N, M = map(int, input().split())
 
@@ -28,20 +28,3 @@ sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
 #         print(n, end=' ')
 ##############################################################################
 N, M = map(int, input().split())
-
-cnt = [0] * (N + M + 1)
-
-# NxM행렬 순회
-for i in range(1, N + 1):   # 1 ~ N 까지 순회
-    for j in range(1, M + 1):   # 1 ~ M 까지 순회
-        cnt[i + j] += 1
-
-# 1차원 배열 하나만 사용해서 계산하기.
-max = -2147000000
-for i in range(N+M+1):
-    if(cnt[i] > max):
-        max = cnt[i]
-
-for i in range(N + M + 1):
-    if(max == cnt[i]):
-        print(i, end=' ')
