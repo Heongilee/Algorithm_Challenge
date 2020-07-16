@@ -1,20 +1,36 @@
 import sys
 sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
 
-# Test case
-T = int(input())
+'''
+S = input()
 
-arr = []
-# T번의 테스트 케이스 진행
-for a in range(T):
-    N, s, e, k = map(int, input().split())
-    
-    # N개의 리스트 원소 삽입
-    arr = list(map(int, input().split()))
-    
-    # list slice기능을 사용하면 sub리스트를 둘 필요가 없어진다.
-    arr = arr[s-1:e]
-    arr.sort()
-    
-    # print("#", a + 1, " ", arr[k - 1], sep='')
-    print("#%d %d" %(a + 1, arr[k-1]))
+res = 0
+for e in map(lambda x: ord(x), S):
+    if(e >= 48 and e <= 57):
+        n = int(chr(e))
+        res = res * 10 + n
+    else:
+        continue
+
+print(res)
+cnt = 0
+for i in range(1, res + 1):
+    if(res % i == 0):
+        cnt += 1
+
+print(cnt)
+'''
+######################## *.isdigit()을 이용한 방법 ###############################
+S = input()
+
+res = 0
+for x in S:
+    if x.isdecimal():
+        res = res * 10 + int(x)
+print(res)
+
+cnt = 0
+for i in range(1, res + 1):
+    if(res % i == 0):
+        cnt += 1
+print(cnt)
