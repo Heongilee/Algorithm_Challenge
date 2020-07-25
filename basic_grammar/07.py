@@ -5,6 +5,7 @@ print(msg.upper())  #모든 문자열을 다 대문자화 시켜 출력함.
 print(msg.lower())  #모든 문자열을 다 소문자화 시켜 출력함.
 
 ### find 함수 : 해당 문자가 발견된 최초 인덱스를 반환함. ###
+### 찾지 못했을 경우, -1을 반환 ###
 print("T의 인덱스는", msg.find('T'))
 print("T의 인덱스는", msg.upper().find('T'))
 

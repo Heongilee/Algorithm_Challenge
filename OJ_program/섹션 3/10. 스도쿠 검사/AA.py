@@ -1,5 +1,4 @@
 import sys
-sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
 
 a = [list(map(int, input().split())) for _ in range(9)]
 
@@ -27,7 +26,7 @@ for i in range(9):
             print("NO")
             sys.exit()
 
-# 그룹 검사               
+# 그룹 검사            
 dx = [0, 1, 2]
 dy = [0, 1, 2]
 for i in range(0, 9, 3):
