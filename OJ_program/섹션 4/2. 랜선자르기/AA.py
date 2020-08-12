@@ -1,6 +1,3 @@
-import sys
-sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
-
 K, N = map(int, input().split())
 
 a = []

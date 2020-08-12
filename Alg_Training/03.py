@@ -1,46 +1,70 @@
 import sys
 sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
 '''
-'''
-a = list(range(0, 21))
-N = 10
+N, M = map(int, input().split())
 
-def swap(x, y):
-    tmp = x
-    x = y
-    y = tmp
+a = list(map(int, input().split()))
+
+# mid 값으로 몇 개를 만들 수 있는지 반환하는 함수
+def count(mid):
+    s = 0
+    cnt = 0
+    i = 0
+    while(i < len(a)):
+        if(s + a[i] <= mid):
+            s += a[i]
+            i += 1
+        else:
+            s = 0
+            cnt += 1
+            continue
+    return cnt + 1
     
-    return x, y
 
-for n in range(N):
-    ai, bi = map(int, input().split())
+lt = 1
+rt = sum(a)
+result = 0
+while(lt <= rt):
+    mid = (lt + rt) // 2
     
-    for i in range((abs(bi-ai) + 1) // 2):
-        a[ai + i], a[bi - i] = swap(a[ai + i], a[bi - i])
-
-# # 1번째 방법
-# for i in range(1, len(a)):
-#     print(a[i], end=' ')
+    res = count(mid)
     
-# 2번째 방법
-a.pop(0)
-for elem in a:
-    print(elem, end=' ')
-###########################################################################
-# TIP : Python에서 swap 사용법
+    if(res > M):
+        lt = mid + 1
+    elif(res <= M):
+        result = mid
+        rt = mid - 1
+        
+print(result)
+'''
+##########################################################################################
+N, M = map(int, input().split()) 
+music_time = list(map(int, input().split()))
 
-'''
-a = 10
-b = 20
+def Count(capacity):
+    cnt = 1
+    sum = 0
+    for elem in music_time:
+        if(sum + elem > capacity):
+            cnt += 1
+            sum = elem
+        else:
+            sum += elem
+    return cnt
+        
 
-a, b = b, a
-print(a, b)
-'''
-###########################################################################
-# for문이 돌면서 변수에 할당받지 않고 그냥 반복만 하고 싶을 때?
-
-'''
-for _ in range(10):
-    # 변수에 할당하지 않고 10번 반복만 시켜준다.
-'''
-###########################################################################
+lt = 1
+rt = sum(music_time)
+maxV = max(music_time)
+res = 0
+while(lt <= rt):
+    mid = (lt + rt) // 2
+    
+    # 맥스값 검사를 안 하면 가장 큰 레코드 값은 DVD에 담을 수 없고 버려지게 된다. (반례 수정)
+    if(mid >= maxV and Count(mid) <= M):    
+        res = mid
+        rt = mid - 1
+    else:
+        lt = mid + 1
+        
+print(res)

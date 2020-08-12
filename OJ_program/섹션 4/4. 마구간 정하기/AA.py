@@ -1,6 +1,3 @@
-import sys
-sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
-
 N, C = map(int, input().split())
 a = []
 for _ in range(N):
