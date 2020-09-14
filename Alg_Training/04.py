@@ -1,3 +1,6 @@
+import sys
+sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
+
 # 숫자 N의 부분집합 개수는 2^N - 1(공집합 제외)개이다.
 def DFS(v):
     if(v == N + 1):
