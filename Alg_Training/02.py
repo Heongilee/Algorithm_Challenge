@@ -1,14 +1,40 @@
 import sys
+import heapq as hq
 sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
 
-def DFS(N):
-    if(N == 0):
-        return  # 그냥 함수를 종료시켜라 라는 의미.
+def Preorder_Traversal(a, i):
+    if(i + 1 > len(a)):
+        return
     else:
-        DFS(N // 2)
-        print(N % 2, end='')
-    return
-    
+        print(a[i], end=' ')
+        Preorder_Traversal(a, i * 2)
+        Preorder_Traversal(a, i * 2 + 1)
+        
+def Inorder_Traversal(a, i):
+    if(i + 1 > len(a)):
+        return
+    else:
+        Inorder_Traversal(a, i * 2)
+        print(a[i], end=' ')
+        Inorder_Traversal(a, i * 2 + 1)
+
+# 후위순회의 대표적인 예 : Merge-sort
+def Postorder_Traversal(a, i):
+    if(i + 1 > len(a)):
+        return
+    else:
+        Postorder_Traversal(a, i * 2)
+        Postorder_Traversal(a, i * 2 + 1)
+        print(a[i], end=' ')
+
 if __name__ == "__main__":
-    N = int(input())
-    DFS(N)  #Depth First Search
+    a = []
+    for i in range(8):
+        hq.heappush(a, i)
+        
+    Preorder_Traversal(a, 1)
+    print()
+    Inorder_Traversal(a, 1)
+    print()
+    Postorder_Traversal(a, 1)
+    

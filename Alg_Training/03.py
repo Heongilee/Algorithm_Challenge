@@ -1,40 +1,25 @@
 import sys
-import heapq as hq
 sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
 
-def Preorder_Traversal(a, i):
-    if(i + 1 > len(a)):
+# 숫자 N의 부분집합 개수는 2^N - 1(공집합 제외)개이다.
+def DFS(v):
+    if(v == N + 1):
+        for i in range(1, len(ch)):
+            if(ch[i] != 0):
+                print(i, end=' ')
+        print()
         return
     else:
-        print(a[i], end=' ')
-        Preorder_Traversal(a, i * 2)
-        Preorder_Traversal(a, i * 2 + 1)
+        ch[v] = 1
+        DFS(v + 1)
+        ch[v] = 0
+        DFS(v + 1)
         
-def Inorder_Traversal(a, i):
-    if(i + 1 > len(a)):
-        return
-    else:
-        Inorder_Traversal(a, i * 2)
-        print(a[i], end=' ')
-        Inorder_Traversal(a, i * 2 + 1)
-
-# 후위순회의 대표적인 예 : Merge-sort
-def Postorder_Traversal(a, i):
-    if(i + 1 > len(a)):
-        return
-    else:
-        Postorder_Traversal(a, i * 2)
-        Postorder_Traversal(a, i * 2 + 1)
-        print(a[i], end=' ')
-
-if __name__ == "__main__":
-    a = []
-    for i in range(8):
-        hq.heappush(a, i)
-        
-    Preorder_Traversal(a, 1)
-    print()
-    Inorder_Traversal(a, 1)
-    print()
-    Postorder_Traversal(a, 1)
     
+# Python에서 main의 기능
+# Array나 list의 원소를 함수를 통해 접근 가능
+# Main 함수에서 선언한 지역변수를 함수를 통해 접근 가능
+if __name__ == "__main__":
+    N = int(input())
+    ch = [0] * (N + 1)
+    DFS(1)

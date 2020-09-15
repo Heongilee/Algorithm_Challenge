@@ -1,25 +1,21 @@
 import sys
 sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
 
-# 숫자 N의 부분집합 개수는 2^N - 1(공집합 제외)개이다.
-def DFS(v):
-    if(v == N + 1):
-        for i in range(1, len(ch)):
-            if(ch[i] != 0):
-                print(i, end=' ')
-        print()
+def DFS(L, sum):
+    if(sum > tot // 2):
         return
+    if(L == N):
+        if sum == (tot - sum):
+            print("YES")
+            sys.exit(0) # 프로그램을 아예 종료시켜 버리는 함수.
     else:
-        ch[v] = 1
-        DFS(v + 1)
-        ch[v] = 0
-        DFS(v + 1)
-        
+        DFS(L + 1, sum + a[L])
+        DFS(L + 1, sum)
     
-# Python에서 main의 기능
-# Array나 list의 원소를 함수를 통해 접근 가능
-# Main 함수에서 선언한 지역변수를 함수를 통해 접근 가능
-if __name__ == "__main__":
+
+if __name__ == '__main__':
     N = int(input())
-    ch = [0] * (N + 1)
-    DFS(1)
+    a = list(map(int, input().split()))
+    tot = sum(a)
+    DFS(0, 0)
+    print("NO")
