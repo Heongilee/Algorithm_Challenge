@@ -48,7 +48,7 @@ def DFS(L):
                 chk[i] = 1
                 res[L] = i
                 DFS(L + 1)
-                chk[i] = 0  # check 변수를 취소시켜준다. 
+                chk[i] = 0  # check 변수를 취소시켜준다.
             
 if __name__ == "__main__":
     N, M = map(int, input().split())
