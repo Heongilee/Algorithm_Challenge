@@ -1,6 +1,3 @@
-import sys
-sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
-
 def DFS(L, S):
     global cnt
     if(L == M):
