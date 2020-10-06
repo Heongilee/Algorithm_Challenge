@@ -1,40 +1,59 @@
 import sys
-import heapq as hq
 sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
+'''
+Case #01 : Success
+Case #02 : Success
+Case #03 : Success
+Case #04 : Success
+Case #05 : Success
 
-def Preorder_Traversal(a, i):
-    if(i + 1 > len(a)):
+점수 결과 : 100
+'''
+'''
+def DFS(L, ps):
+    global res
+    if(L > N + 1):
+        return
+    if(L == N + 1):
+        if(ps > res):
+            res = ps
         return
     else:
-        print(a[i], end=' ')
-        Preorder_Traversal(a, i * 2)
-        Preorder_Traversal(a, i * 2 + 1)
-        
-def Inorder_Traversal(a, i):
-    if(i + 1 > len(a)):
-        return
-    else:
-        Inorder_Traversal(a, i * 2)
-        print(a[i], end=' ')
-        Inorder_Traversal(a, i * 2 + 1)
+        DFS(L + v[L][0], ps + v[L][1])
+        DFS(L + 1, ps)
 
-# 후위순회의 대표적인 예 : Merge-sort
-def Postorder_Traversal(a, i):
-    if(i + 1 > len(a)):
-        return
-    else:
-        Postorder_Traversal(a, i * 2)
-        Postorder_Traversal(a, i * 2 + 1)
-        print(a[i], end=' ')
-
-if __name__ == "__main__":
-    a = []
-    for i in range(8):
-        hq.heappush(a, i)
-        
-    Preorder_Traversal(a, 1)
-    print()
-    Inorder_Traversal(a, 1)
-    print()
-    Postorder_Traversal(a, 1)
+if __name__ == '__main__':
+    N = int(input())
+    v = [(-1, -1)]
+    for _ in range(N):
+        T, P = map(int, input().split())
+        v.append((T, P))
+    res = -2147000000
     
+    DFS(1, 0)
+    print(res)
+'''
+#####################################################################
+def DFS(L, sum):
+    global res
+    if L == n + 1:
+        if sum > res:
+            res = sum
+        return
+    else:
+        if L + T[L] <= n + 1:
+            DFS(L + T[L], sum + P[L])
+        DFS(L + 1, sum)
+    
+if __name__ == '__main__':
+    n = int(input())
+    T = list()
+    P = list()
+    for i in range(n):
+        a, b = map(int, input().split())
+        T.append(a)
+        P.append(b)
+    res = -2147000000
+    T.insert(0, 0)
+    P.insert(0, 0)
+    DFS(1, 0)

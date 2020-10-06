@@ -1,6 +1,3 @@
-import sys
-sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
-
 def DFS(L, s_sum, t_sum):
     global res
     if(t_sum > M):
