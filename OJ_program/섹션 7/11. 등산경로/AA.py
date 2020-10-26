@@ -1,7 +1,4 @@
-import sys
 import time
-sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
-
 
 def minimum_position():
     t = 2147000000
@@ -57,4 +54,4 @@ if __name__ == "__main__":
     DFS(start[0], start[1])
     print(cnt)
     end_time = time.time()
-    print(f"time : {round(end_time - start_time, 10)}sec")
+    print("time : ", end_time - start_time)

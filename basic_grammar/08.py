@@ -58,6 +58,7 @@ print(a.index(2))   # 2라는 값의 인덱스는 1번 인덱스에 있다.
 
 '''
 ########################################################################################
+'''
 a = list(range(1, 11))  #a 리스트 초기화
 print(a)
 
@@ -72,7 +73,7 @@ print(a)
 rd.shuffle(a)
 print(a)
 
-# 정렬하기
+# 정렬하기 (Big-O : Nlog(N) )
 a.sort()    # ascending
 print(a)
 a.sort(reverse=True)    # descending
@@ -81,3 +82,28 @@ print(a)
 # 리스트의 값들을 모두 제거 -> 빈 리스트 출력
 a.clear()
 print(a)
+'''
+########################################################################################
+# List comprehension
+
+list1 = [i for i in range(1, 11) if i % 2 == 1]
+print("list1 : ", list1)
+
+#! 다음과 같은 2차원 배열 초기화는 각 행을 같은 객체로 인식하기 때문에 사용 시 주의해야함.
+N = 5
+M = 3
+'''
+list2 = [[0] * N] * M
+print("Before list2 : ")
+for l in list2:
+    print(l)
+
+list2[0][0] = 1
+print("After list2 : ")
+for l in list2:
+    print(l)
+'''
+
+list3 = [[0] * N for _ in range(M)]
+for l in list3:
+    print(l)
