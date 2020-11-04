@@ -1,36 +1,36 @@
-import sys
-#sys.stdin=open("input.txt", "r")
-dx=[-1, 0, 1, 0]
-dy=[0, 1, 0, -1]
-sys.setrecursionlimit(10**6)
-def DFS(x, y, h):
-    ch[x][y]=1
-    for i in range(4):
-        xx=x+dx[i]
-        yy=y+dy[i]
-        if 0<=xx<n and 0<=yy<n and ch[xx][yy]==0 and board[xx][yy]>h:
-            DFS(xx, yy, h)
+from collections import deque
 
-if __name__=="__main__":
-    n = int(input())
-    cnt = 0
-    res = 0
-    board=[list(map(int, input().split())) for _ in range(n)]
+def BFS(h):
+    while(dq):
+        t = dq.popleft()
+        chk[t[0]][t[1]] = 1
+
+        for i in range(4):
+            xx = t[0] + dx[i]
+            yy = t[1] + dy[i]
+            if(0 <= xx < N and 0 <= yy < N and board[xx][yy] > h and chk[xx][yy] == 0):
+                dq.append((xx, yy))
+    return
+
+if __name__ == '__main__':
+    dx = [-1, 0, 1, 0]
+    dy = [0, 1, 0, -1]
+    N = int(input())
+    ans = 0
+    board = [list(map(int, input().split())) for _ in range(N)]
+    chk = list([0] * N for _ in range(N))
+    dq = deque([])
+
     for h in range(100):
-        ch=[[0]*n for _ in range(n)]
-        cnt=0
-        for i in range(n):
-            for j in range(n):
-                if ch[i][j]==0 and board[i][j]>h:
-                    cnt+=1
-                    DFS(i, j, h)
-        res=max(res, cnt)
-        if cnt==0:
+        cnt = 0
+        chk = list([0] * N for _ in range(N))
+        for i in range(N):
+            for j in range(N):
+                if(chk[i][j] == 0 and board[i][j] > h):
+                    cnt += 1
+                    dq.append((i, j))
+                    BFS(h)
+        ans = max(ans, cnt)
+        if(cnt == 0):
             break
-    print(res)
-
-
-
-
-
-    
+    print(ans)
