@@ -23,8 +23,6 @@ if __name__ == '__main__':
     chk = list([0] * N for _ in range(N))
     dq = deque([])
 
-    max_height = max(max(board))
-
     for h in range(100):
         cnt = 0
         chk = list([0] * N for _ in range(N))
@@ -39,6 +37,7 @@ if __name__ == '__main__':
         if(cnt == 0):
             break
     print(ans)
+
 ###################################################################################
 '''
 sys.setrecursionlimit(10**6)
