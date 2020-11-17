@@ -1,59 +1,25 @@
 import sys
+import time
 sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
-'''
-Case #01 : Success
-Case #02 : Success
-Case #03 : Success
-Case #04 : Success
-Case #05 : Success
+sys.setrecursionlimit(10 ** 6)
 
-점수 결과 : 100
-'''
-'''
-def DFS(L, ps):
-    global res
-    if(L > N + 1):
-        return
-    if(L == N + 1):
-        if(ps > res):
-            res = ps
-        return
+def DFS(len):
+    # cut-edge : 이미 메모리제이션된 값을 참조할 경우, 바로 값을 리턴할 것.
+    if(D[len] > 0):
+        return D[len]
+    if(len == 1 or len == 2): # 종착점 : 직관적으로 알 수 있는 충분히 작은 문제의 해
+        return len
     else:
-        DFS(L + v[L][0], ps + v[L][1])
-        DFS(L + 1, ps)
-
-if __name__ == '__main__':
+        # 점화식
+        D[len] = DFS(len - 1) + DFS(len - 2)
+        return D[len]
+    
+if __name__ == "__main__":
+    start_time = time.time()
     N = int(input())
-    v = [(-1, -1)]
-    for _ in range(N):
-        T, P = map(int, input().split())
-        v.append((T, P))
-    res = -2147000000
-    
-    DFS(1, 0)
+    D = [0] * (N + 1)
+    res = DFS(N) # Memorization Table
     print(res)
-'''
+    end_time = time.time()
+    print(f"time: {round(end_time - start_time, 10)} sec")
 #####################################################################
-def DFS(L, sum):
-    global res
-    if L == n + 1:
-        if sum > res:
-            res = sum
-        return
-    else:
-        if L + T[L] <= n + 1:
-            DFS(L + T[L], sum + P[L])
-        DFS(L + 1, sum)
-    
-if __name__ == '__main__':
-    n = int(input())
-    T = list()
-    P = list()
-    for i in range(n):
-        a, b = map(int, input().split())
-        T.append(a)
-        P.append(b)
-    res = -2147000000
-    T.insert(0, 0)
-    P.insert(0, 0)
-    DFS(1, 0)
