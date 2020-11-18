@@ -1,7 +1,5 @@
 import sys
-import time
 sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
-sys.setrecursionlimit(10 ** 6)
 
 if __name__ == "__main__":
     N = int(input())
