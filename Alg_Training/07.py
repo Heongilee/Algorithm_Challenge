@@ -1,43 +1,19 @@
 import sys
-from collections import deque
 sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
 
-'''
 if __name__ == '__main__':
-    dx = [-1, 0]    #12시 9시 방향.
-    dy = [0, -1]
     N = int(input())
-    board = [list(map(int, input().split())) for _ in range(N)]
-    D = [[0] * N for _ in range(N)]
-    
-    D[0][0] = board[0][0]
-    for i in range(N):
-        for j in range(N):
-            if(i == 0 and j == 0): continue
-            t = 2147000000
-            for k in range(2):
-                xx = i + dx[k]
-                yy = j + dy[k]
-                if(xx < N and yy < N and D[xx][yy] != 0 and D[xx][yy] < t):
-                    t = D[xx][yy]
-            D[i][j] = t + board[i][j]
-    print(D[N - 1][N - 1])
-'''
-#######################################################################################
-# Solution
-##################################################################################
-if __name__ == '__main__':
-    n = int(input())
-    arr = [list(map(int, input().split())) for _ in range(n)]
-    dy = [[0] * n for _ in range(n)]
-    dy[0][0] = arr[0][0]
-    for i in range(1, n):
-        #Col
-        dy[0][i] = dy[0][i - 1] + arr[0][i]
-        #Row
-        dy[i][0] = dy[i - 1][0] + arr[i][0]
-    
-    for i in range(1, n):
-        for j in range(1, n):
-            dy[i][j] = min(dy[i - 1][j], dy[i][j - 1]) + arr[i][j]
-    print(dy[n - 1][n - 1])
+    block = []
+    D = [0] * (N + 1)
+    for _ in range(N):
+        s, h, w = map(int, input().split())
+        block.append([s, h, w])
+    block.sort(key=lambda x: x[0], reverse=True)
+    block.insert(0, [-1])
+    for i in range(1, N + 1):
+        if all(S[0] < block[i][0] for S in block[1:i]):
+            D[i]=block[i][1]
+        else:
+            tmp_l=list(map(lambda j: D[j] if(block[j][2] > block[i][2]) else 0, range(1, i)))
+            D[i]=max(tmp_l) + block[i][1]
+    print(max(D))
