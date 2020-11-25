@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
+# sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
 
 if __name__ == '__main__':
     N, M = map(int, input().split())
@@ -14,4 +14,3 @@ if __name__ == '__main__':
         for j in range(M, pt - 1, -1):
             D[j] = max(D[j - pt] + pv, D[j])
     print(D[M])
-    
