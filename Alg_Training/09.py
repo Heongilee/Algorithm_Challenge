@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
+sys.stdin = open("./Alg_Training/input.txt", "rt")
 
 def DFS(x, y):
     if(D[x][y] > 0):

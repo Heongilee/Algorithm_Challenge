@@ -1,6 +1,6 @@
 import sys
 from collections import deque
-sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
+sys.stdin = open("./Alg_Training/input.txt", "rt")
 
 '''
 if __name__ == '__main__':

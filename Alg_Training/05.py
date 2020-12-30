@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open(".\\Alg_Training\\input.txt", "rt")
+sys.stdin = open("./Alg_Training/input.txt", "rt")
 
 # Bottom-up 방식(1)
 '''
