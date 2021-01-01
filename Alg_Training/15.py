@@ -25,3 +25,4 @@ if __name__ == "__main__":
                 degree[i] -= 1
                 if(degree[i] == 0):
                     dq.append(i)
+    print()
