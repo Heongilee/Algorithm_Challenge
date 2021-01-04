@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open(".\\Na_Dongbin_Algorithm_Youtube\\input.txt", "rt")
+sys.stdin = open("./Na_Dongbin_Algorithm_Youtube/input.txt", "rt")
 
 if __name__ == "__main__":
     command = [(-1, -2), (-1, 2), (1, 2), (1, -2), (-2, -1), (-2, 1), (2, 1), (2, -1)]
