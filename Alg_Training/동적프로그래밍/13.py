@@ -1,9 +1,9 @@
 import sys
 sys.stdin = open("./Alg_Training/input.txt")
-
+INF = 2147000000
 if __name__ == "__main__":
     N, M = map(int, input().split())
-    dis = list([2147000000] * N for _ in range(N))
+    dis = list([INF] * N for _ in range(N))
     for i in range(N):
         dis[i][i] = 0
     
@@ -19,7 +19,7 @@ if __name__ == "__main__":
     # 출력
     for i in range(N):
         for j in range(N):
-            if(dis[i][j] == 2147000000):
+            if(dis[i][j] == INF):
                 print("M", end=' ')
             else:
                 print(dis[i][j], end=' ')

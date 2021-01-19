@@ -53,7 +53,7 @@ if __name__ == '__main__':
         a, b, c = map(int, input().split())
         graph[a].append((b, c))
     
-    # 알고리즘 수행.
+    # 알고리즘 수행
     dijkstra(start)
 
     # 출력
