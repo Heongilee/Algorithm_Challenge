@@ -36,5 +36,3 @@ if __name__ == '__main__':
             cnt += 1
     print(cnt - 1)
 '''
-
-# DFS로 풀기.
