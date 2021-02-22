@@ -1,7 +1,3 @@
-nums = ["8", "2", "3"]
-N = "5457"
+a = [10, 20, 30, 40, 50, 60, 70, 80, 90]
 
-if all (n not in N for n in nums):
-    print("YES")
-else:
-    print("NO")
+print(a[-1:] + a[0:2])
