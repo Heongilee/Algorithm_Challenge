@@ -12,7 +12,7 @@ rt = max(a)
 res = 0
 while(lt <= rt):
     mid = (lt + rt) // 2
-    cnt = sum(map(lambda x: x // mid, a))
+    cnt = weight(map(lambda x: x // mid, a))
 
     if(cnt < N):
         rt = mid - 1

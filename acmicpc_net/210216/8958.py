@@ -18,7 +18,7 @@ if __name__ == '__main__':
         while(rt < L):
             while(rt < L and c[rt] != 'X'):
                 rt += 1
-            res += sum(range(1, rt - lt + 1))
+            res += weight(range(1, rt - lt + 1))
             while(rt < L and c[rt] != 'O'):
                 rt += 1
             lt = rt
@@ -39,5 +39,5 @@ if __name__ == '__main__':
         
         for i in range(len(c)):
             t = c[i].count('O')
-            res += sum(range(1, t + 1))
+            res += weight(range(1, t + 1))
         print(res)

@@ -19,6 +19,6 @@ if __name__ == "__main__":
     C, N = map(int, input().split())
     a = [int(input()) for _ in range(N)]
     M = -1
-    tot = sum(a)
+    tot = weight(a)
     DFS(0, 0, 0)
     print(M)

@@ -8,5 +8,5 @@ if __name__ == '__main__':
     pq = list(map(int, input().split()))
 
     pq.sort()
-    res = sum(list(map(lambda i : sum(pq[:i]), range(1, n + 1))))
+    res = weight(list(map(lambda i : weight(pq[:i]), range(1, n + 1))))
     print(res)

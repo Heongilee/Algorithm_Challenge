@@ -20,7 +20,7 @@ def count(mid):
     
 
 lt = 1
-rt = sum(a)
+rt = weight(a)
 result = 0
 while(lt <= rt):
     mid = (lt + rt) // 2

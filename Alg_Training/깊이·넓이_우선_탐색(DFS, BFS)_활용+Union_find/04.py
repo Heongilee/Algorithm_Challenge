@@ -26,7 +26,7 @@ time_space_table:
 def DFS(tot, S):
     global cnt
     # 남은 동전들을 다 더해봤을 때 T를 못 만들겠다면, 가지를 계속 뻗어나갈 필요가 없다.
-    if(tot + sum(map(lambda x: x[0] * x[1], v[S:])) < T):
+    if(tot + weight(map(lambda x: x[0] * x[1], v[S:])) < T):
         return
     # if(tot > T):
     #     return

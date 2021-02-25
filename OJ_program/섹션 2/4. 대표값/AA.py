@@ -1,7 +1,7 @@
 N = int(input())
 s = list(map(int, input().split()))
 
-avg = round(sum(s) / N)
+avg = round(weight(s) / N)
 
 min = 2147000000
 score = 0

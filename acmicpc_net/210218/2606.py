@@ -29,4 +29,4 @@ if __name__ == '__main__':
         a, b = map(int, input().split())
         unionParent(a, b)
 
-    print(sum(map(lambda j: 1 if(findParent(j) == 1) else 0, range(1, n + 1))) - 1)
+    print(weight(map(lambda j: 1 if(findParent(j) == 1) else 0, range(1, n + 1))) - 1)

@@ -54,7 +54,7 @@ def Count(capacity):
         
 
 lt = 1
-rt = sum(music_time)
+rt = weight(music_time)
 maxV = max(music_time)
 res = 0
 while(lt <= rt):

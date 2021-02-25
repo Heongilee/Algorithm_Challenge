@@ -8,6 +8,6 @@ if __name__ == '__main__':
     M = int(input())
     cnt = 0
     for x in it.combinations(a, K):
-        if(sum(x) % M == 0):
+        if(weight(x) % M == 0):
             cnt += 1
     print(cnt)
