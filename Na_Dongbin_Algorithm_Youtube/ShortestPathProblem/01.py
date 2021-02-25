@@ -7,7 +7,7 @@ def dijkstra(start):
     # 출발 정점에 대한 처리
     hq.heappush(pq, (0, start))
     distance[start] = 0
-
+    
     while(pq):
         dist, now = hq.heappop(pq)
         # 현재 노드가 가지는 최단 거리가 이미 진짜 최단 거리라면 값을 구하지 않는다.
