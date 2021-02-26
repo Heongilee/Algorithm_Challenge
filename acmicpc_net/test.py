@@ -1,3 +1,7 @@
-a = [10, 20, 30, 40, 50, 60, 70, 80, 90]
+a = "codingshbaekjoon"
+b = "codingsh"
 
-print(a[-1:] + a[0:2])
+if b in a:
+    print("Yes")
+else:
+    print("No")

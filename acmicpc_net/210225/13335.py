@@ -16,11 +16,14 @@ if __name__ == '__main__':
             if(len(Q) == w):
                 weight -= Q[0]
                 Q.popleft()
+            # 큐에 다음원소를 넣을 준비가 됐다면 빠져나가서 다음 원소를 계산함.
             if(weight + truck[i] <= L): break
+            # 큐에 공간이 남고 다음원소를 받기에는 무게가 초과되면 0을 채워넣어 큐를 돌린다.
             Q.append(0)
             cnt += 1
         Q.append(truck[i])
         weight += truck[i]
         cnt += 1
+    # 남은 차선을 계산해준다.
     cnt += w
     print(cnt)
