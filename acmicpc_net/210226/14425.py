@@ -8,9 +8,9 @@ if __name__ == '__main__':
     W = {input() for _ in range(n)}
     cnt = 0
 
-    for j in range(m):
+    for _ in range(m):
         ct = input()
         if ct in W:
             cnt += 1
-    
+
     print(cnt)

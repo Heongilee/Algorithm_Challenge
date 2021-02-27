@@ -1,7 +1,22 @@
-a = "codingshbaekjoon"
-b = "codingsh"
+#################################################################
+# Swapping Algorithm without tmp
+############################################################
+'''
+def solution(a, b):
+    a = a + b
+    b = a - b
+    a = a - b
+    return a, b
 
-if b in a:
-    print("Yes")
-else:
-    print("No")
+if __name__ == '__main__':
+    a = 214748
+    b = 356419
+
+    print("Before:\t", a, b)
+    a, b = solution(a, b)
+    print("After:\t", a, b)
+'''
+
+#################################################################
+# Swapping Algorithm without tmp
+############################################################
