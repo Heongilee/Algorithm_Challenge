@@ -4,10 +4,12 @@ import sys
 import heapq as hq
 sys.stdin = open("./acmicpc_net/input.txt", "rt")
 
+
 def findParent(v):
     if v != parent[v]:
         parent[v] = findParent(parent[v])
     return parent[v]
+
 
 def unionParent(a, b):
     a = findParent(a)
