@@ -16,7 +16,6 @@ if __name__ == '__main__':
     a, b = solution(a, b)
     print("After:\t", a, b)
 '''
-from collections import deque
-a = "abba"
-
-print(a[:len(a) - 1])
+#################################################################
+# Segment Tree - 01
+############################################################
