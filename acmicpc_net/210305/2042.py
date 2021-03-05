@@ -2,6 +2,7 @@
 # https://www.acmicpc.net/problem/2042
 import sys
 sys.stdin = open("./acmicpc_net/input.txt", "rt")
+'''
 import math
 ############################################################################
 # segment tree를 활용한 문제
@@ -21,7 +22,6 @@ import math
 #    1. [start, end]에 index가 포함되는 경우
 #    2. [start, end]에 index가 포함되지 않는 경우
 #######################################################################
-# SIZE = int(3e6)
 
 # build segment tree
 def init(node, start, end):
@@ -85,3 +85,43 @@ if __name__ == '__main__':
         elif a == 2:    # b번째 수 부터 c번째 수 까지의 구간 합을 구한다.
             res = query(1, 0, n - 1, b - 1, c - 1)
             print(res)
+'''
+#############################################################################################
+# BIT(Binary Index Tree) 사용한 풀이
+########################################################################################
+# i번째 수 까지의 누적합을 구하는 함수
+def prefixSummation(i):
+    res = 0
+    while i > 0:
+        res += tree[i]
+        i -= (i & -i)
+    return res
+
+# i번째 수를 diff만큼 업데이트 하는 함수
+def update(i, diff):
+    while i <= n:
+        tree[i] += diff
+        i += (i & -i)
+
+# 구간합을 구하는 함수
+def intervalSummation(start, end):
+    return prefixSummation(end) - prefixSummation(start - 1)
+
+if __name__ == '__main__':
+    n, m, k = map(int, input().split())
+
+    arr = [0] * (n + 1)
+    tree = [0] * (n + 1)
+
+    for i in range(1, n + 1):
+        x = int(input())
+        arr[i] = x
+        update(i, x)
+    
+    for i in range(m + k):
+        a, b, c = map(int, input().split())
+        if a == 1:
+            update(b, c - arr[b])   # 바뀐 크기(diff)만큼 적용
+            arr[b] = c
+        else:
+            print(intervalSummation(b, c))
