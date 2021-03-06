@@ -17,5 +17,14 @@ if __name__ == '__main__':
     print("After:\t", a, b)
 '''
 #################################################################
-# Segment Tree - 01
+# *, ** means
 ############################################################
+def f2(**kwargs):
+    print(kwargs, type(kwargs))
+    print(kwargs.keys())
+    print(kwargs.values())
+
+    for K, V in kwargs.items():
+        print("Key :", K, ", Value :", V)
+
+f2(K1 = "V1", K2 = "V2", K3 = "V3", K4 = "V4")
