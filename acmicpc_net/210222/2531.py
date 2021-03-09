@@ -37,20 +37,15 @@ if __name__ == '__main__':
     rt = k - 1
     res = 0
     for i in range(lt, rt + 1):
-        if(dic.get(graph[i], 0) == 0):
-            dic[graph[i]] = 1
-        else:
-            dic[graph[i]] += 1
+        dic[graph[i]] = dic.get(graph[i], 0) + 1
+
     res += len(dic)
     res += 1 if(dic.get(c, 0) == 0) else 0
 
     while lt < N:
         current_res = 0
         rt += 1
-        if(dic.get(graph[rt], 0) == 0):
-            dic[graph[rt]] = 1
-        else:
-            dic[graph[rt]] += 1
+        dic[graph[rt]] = dic.get(graph[rt], 0) + 1
         
         if(dic[graph[lt]] == 1):
             del dic[graph[lt]]
