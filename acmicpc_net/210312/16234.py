@@ -44,5 +44,4 @@ if __name__ == '__main__':
         if not flag:
             break
         res += 1
-
     print(res)

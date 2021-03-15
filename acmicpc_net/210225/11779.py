@@ -4,7 +4,7 @@ import heapq as hq
 import sys
 sys.stdin = open("./acmicpc_net/input.txt", "rt")
 sys.setrecursionlimit(10 ** 6)
-INF = int(10e9)
+INF = int(10e4)
 
 def pathExpression(L, v):
     if(v == src):
@@ -37,7 +37,6 @@ if __name__ == '__main__':
     prev = [0] * (n + 1)    # 최소값 갱신했을때 이전노드를 기록하는 리스트
     graph = [[] for _ in range(n + 1)]
     m = int(input())
-    res = []
 
     # build graph
     for _ in range(m):
@@ -45,7 +44,6 @@ if __name__ == '__main__':
         graph[a].append((b, w))
 
     src, des = map(int, input().split())    # 출발지, 도착지
-    res.append(src)
 
     # execute algorithm
     dijkstra()
