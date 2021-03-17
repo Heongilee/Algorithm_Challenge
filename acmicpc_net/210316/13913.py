@@ -20,26 +20,26 @@ def BFS(n):
             while t != n:
                 arr.append(t)
                 t = prev[t]
-            for e in [n] + arr[::-1]:
-                print(e, end=' ')
-            print()
+            arr.append(n)
+            print(' '.join(map(str, arr[::-1])))
             return
-        for tt in (t + 1, t - 1, t * 2):
-            if 0 <= tt < SIZE and dis[tt] == 0:
-                dq.append(tt)
+        for tt in (t - 1, t + 1, t * 2):
+            if 0 <= tt < SIZE and not dis[tt]:
                 dis[tt] = dis[t] + 1
                 prev[tt] = t
+                dq.append(tt)
 
 if __name__ == '__main__':
     n, m = map(int, input().split())
     dis = [0] * SIZE    # 거리를 기록
-    prev = [0] * SIZE   # 이전 노드를 기록
+    prev = [-1] * SIZE   # 이전 노드를 기록
 
     BFS(n)
 
 #########################################################################
 # 내 풀이 (BOJ 70% WA)
 ####################################################################
+'''
 import sys
 sys.stdin = open("./acmicpc_net/input.txt", "rt")
 from collections import deque
@@ -85,3 +85,4 @@ if __name__ == '__main__':
     prev = [0] * SIZE   # 이전 노드를 기록
 
     BFS(n)
+'''

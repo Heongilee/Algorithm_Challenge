@@ -57,6 +57,12 @@ if __name__ == '__main__':
 #################################################################
 # Test zone
 ############################################################
-c = a = b = 2 + 3
-
-print(a, b, c)
+for i in range(50):
+    for j in range(50):
+        if j == 0 or j == 49:
+            print(1, end=' ')
+        elif j == 1 or j == 48:
+            print(2, end=' ')
+        else:
+            print(0, end=' ')
+    print()
