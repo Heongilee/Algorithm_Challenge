@@ -1,1 +1,6 @@
-summuus
+4 5
+c.xc
+....
+xx..
+...x
+xxx.
