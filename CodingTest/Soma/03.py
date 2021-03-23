@@ -55,7 +55,7 @@ def DFS(h_lt, h_rt, v_lt, v_rt):
             if 0 <= y <= mid:   #1 사분면
                 boardPainting(0, mid, 0, mid)
                 DFS(0, mid, 0, mid)
-            elif mid + 1 <= y <= rt:    #2 사분면
+            elif mid + 1 <= y <= rt:    #2 사분면 
                 boardPainting(mid + 1, rt, 0, mid)
                 DFS(mid + 1, rt, 0, mid)
         elif mid + 1 <= x <= rt:
@@ -82,8 +82,7 @@ def DFS(h_lt, h_rt, v_lt, v_rt):
                 DFS(0, mid, mid + 1, rt)
             elif mid + 1 <= y <= rt:    #4 사분면
                 boardPainting(mid + 1, rt, mid + 1, rt)
-                DFS(mid + 1, rt, mid + 1, rt)        
-
+                DFS(mid + 1, rt, mid + 1, rt)
 
 if __name__ == '__main__':
     n = int(input())

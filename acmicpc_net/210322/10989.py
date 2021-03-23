@@ -11,7 +11,7 @@ if __name__ == '__main__':
         t = int(sys.stdin.readline())
         cnt[t] += 1
 
-    
+
     for i in range(INF):
         if cnt[i] != 0:
             for j in range(cnt[i]):
