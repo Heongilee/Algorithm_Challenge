@@ -1,4 +1,22 @@
 #################################################################
+# 백준 풀 때 빠른 입력받기 팁
+############################################################
+'''
+import sys
+import time
+sys.stdin = open("./acmicpc_net/input.txt", "rt")
+input = sys.stdin.readline
+SIZE = 980000
+if __name__ == '__main__':
+    st = time.time()
+    for _ in range(SIZE):
+        t = input()
+    en = time.time()
+
+    print(f"time : {round(en - st, 10)}sec")
+'''
+
+#################################################################
 # Swapping Algorithm without tmp
 ############################################################
 '''
@@ -57,4 +75,9 @@ if __name__ == '__main__':
 #################################################################
 # Test zone
 ############################################################
-print(3 ** 7)
+import sys
+sys.stdin = open("./acmicpc_net/input.txt", "rt")
+input = sys.stdin.readline
+
+if __name__ == '__main__':
+    
