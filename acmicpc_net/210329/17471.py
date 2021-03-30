@@ -96,12 +96,10 @@ if __name__ == '__main__':
         X = set(range(1, n + 1))
         for x in it.combinations(X, i):
             # X의 여집합
-            Y = X.difference(x)
-            for y in it.combinations(Y, n - i):
+            for y in it.combinations(X.difference(x), n - i):
                 # 두 그룹이 연결되어 있으면...
                 if BFS(x) and BFS(y):
                     t = abs(sum(map(lambda i: weight[i], x)) - sum(map(lambda j: weight[j], y)))
-                    if t < res:
-                        res = t
+                    res = min(t, res)
     
     print(res if res != INF else -1)
