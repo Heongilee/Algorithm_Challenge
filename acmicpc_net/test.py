@@ -75,9 +75,9 @@ if __name__ == '__main__':
 #################################################################
 # Test zone
 ############################################################
-import sys
-sys.stdin = open("./acmicpc_net/input.txt", "rt")
-input = sys.stdin.readline
+l = []
 
-if __name__ == '__main__':
-    
+if l:
+    print("YES")
+else:
+    print("NO")
