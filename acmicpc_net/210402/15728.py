@@ -23,4 +23,3 @@ if __name__ == '__main__':
             print(M)
             sys.exit(0)
         tCard[idx] = tCard[n - i - 1]
-        

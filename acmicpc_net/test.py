@@ -73,11 +73,16 @@ if __name__ == '__main__':
     print()
 '''
 #################################################################
-# Test zone
+# 테스트케이스 작성
 ############################################################
-l = []
 
-if l:
-    print("YES")
-else:
-    print("NO")
+f = open("./acmicpc_net/tc1.txt", "w")
+f.write("10000 10000\n")
+for i in range(1, 10001):
+    if i == 10000:
+        data = "10000 1\n"
+    else:
+        data = str(i) + " " + str(i + 1) + "\n"
+    # print(data)
+    f.write(data)
+f.close()
