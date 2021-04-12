@@ -1,6 +1,6 @@
 # 🏆 Challenge
 
-![Untitled%2049e13eb897fa4476955497a65dfe2554/Untitled.png](Untitled%2049e13eb897fa4476955497a65dfe2554/Untitled.png)
+![baekjoon](https://github.com/Heongilee/StudyingCodingTests_in_Python/blob/master/acmicpc_net/MarkdownAssets/baekjoon.png?raw=true)
 
 🗓️ 2021-02-15 ~* 
 
@@ -14,4 +14,5 @@
 
 - 하루 1문제 풀기
 
-**🎚️ Solved.ac :**
+**🎚️ Solved.ac :**   
+　[![Solved.ac프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=lachrym96)](https://solved.ac/lachrym96)
