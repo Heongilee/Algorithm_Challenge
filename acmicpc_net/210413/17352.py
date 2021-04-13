@@ -1,5 +1,6 @@
 import sys, itertools as it
 sys.stdin = open("./acmicpc_net/input.txt", "rt")
+sys.setrecursionlimit(10 ** 6)
 input = sys.stdin.readline
 
 def findParent(v):
