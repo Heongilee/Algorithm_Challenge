@@ -1,31 +1,25 @@
-import sys
-from collections import deque
-sys.stdin = open("./acmicpc_net/input.txt", "rt")
-input = sys.stdin.readline
 
 ##########################################################################
 # 98% WA (대체 왜...???)
 #####################################################################
-def getKey(v):
-    return v % 10000
-
+'''
 def insertHashTable(V, idx):
-    K = getKey(V)
-
-    for i in range(len(hashTable[K])):
-        if hashTable[K][i][0] == V:
-            tmp = hashTable[K][i][1]    # 인덱스 저장
-            hashTable[K][i][1] = idx
+    for i in range(len(hashTable[V])):
+        if hashTable[V][i][0] == V:
+            tmp = hashTable[V][i][1]    # 인덱스 저장
+            hashTable[V][i][1] = idx
             return tmp
 
-    hashTable[K].append([V, idx])
+    hashTable[V].append([V, idx])
     return -1
 
 if __name__ == '__main__':
     n, k = map(int, input().split())
     students = list(int(input()) for _ in range(k))
-    hashTable = dict(zip(list(map(lambda X : getKey(X), set(students))), list([] for _ in range(len(set(students))))))
-    
+    hashTable = dict(zip(list(set(students)), list([] for _ in range(len(set(students))))))
+    # hashTable = [[] for _ in range(10000)]
+
+    print(hashTable)
     for i in range(k):
         t = insertHashTable(students[i], i)
         if t != -1: students[t] = 0
@@ -37,6 +31,7 @@ if __name__ == '__main__':
             cnt += 1
             if cnt >= n:
                 break
+'''
 ############################################################################
 # my answer (Python3 TLE, Pypy3 1% TLE)
 #######################################################################
