@@ -17,7 +17,7 @@ if __name__ == '__main__':
                 ['z', 'x', 'c', 'v', 'b', 'n', 'm']]
     arr = list(input().rstrip())
     
-    # 초기 위치 잡기
+    # 초기 위치 잡기 .
     lx, ly = findPos(sl)
     rx, ry = findPos(sr)
 
