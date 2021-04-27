@@ -42,8 +42,3 @@ if __name__ == '__main__':
         else: rx, ry = x, y
 
     print(res)
-        
-    '''
-    print("lx, ly : ", lx, ly)
-    print("rx, ry : ", rx, ry)
-    '''
