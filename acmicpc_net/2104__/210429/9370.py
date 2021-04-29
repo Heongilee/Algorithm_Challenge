@@ -6,7 +6,7 @@ input = sys.stdin.readline
 INF = int(10e9)
 
 def dijkstra(s):
-    D = [INF] * (n + 1) # prev, distance
+    D = [INF] * (n + 1) # distance
     pq = []
     hq.heappush(pq, (0, s))
     D[s] = 0
