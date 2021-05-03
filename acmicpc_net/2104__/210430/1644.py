@@ -12,9 +12,9 @@ input = sys.stdin.readline
 #     return False if any (n % i == 0 for i in range(2, n)) else True
 
 # 시간 복잡도 : O(n^(1/2))
-# import math
-# def isPrime(n):
-#     return False if any (n % i == 0 for i in range(2, int(math.sqrt(n)) + 1)) else True
+import math
+def isPrime(n):
+    return False if any (n % i == 0 for i in range(2, int(math.sqrt(n)) + 1)) else True
 
 # 에라토스테네스의 체
 def primeSieve(n):
