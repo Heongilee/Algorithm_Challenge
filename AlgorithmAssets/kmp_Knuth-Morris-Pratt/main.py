@@ -10,7 +10,7 @@ input = sys.stdin.readline
 
 
 # 최대 일치 길이 배열(pi) 구하기
-def buildPiTable(string):
+def failureFunction(string):
     m = len(string)
     j = 0
     pi = [0] * m
@@ -24,7 +24,8 @@ def buildPiTable(string):
 
 def KMP(parent, pattern):
     foundIndex = []
-    pi = buildPiTable(parent)
+    # 실패함수로 pi배열 얻기.
+    pi = failureFunction(parent)
     j = 0
     for i in range(len(parent)):
         while j > 0 and parent[i] != pattern[j]:
