@@ -1,4 +1,5 @@
 {
     "editor.fontSize": 15.5,
-    "python.pythonPath": "/home/heonjjang/anaconda3/bin/python"
+    "python.pythonPath": "/home/heonjjang/anaconda3/bin/python",
+    "editor.fontFamily": "elicedigitalbaeum_regular, Consolas, 'Courier New', monospace"
 }
