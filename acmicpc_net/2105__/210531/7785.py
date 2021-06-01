@@ -8,7 +8,7 @@ if __name__ == '__main__':
     for _ in range(n):
         name, state = input().rstrip().split()
         dic[name] = 1 if state == "enter" else 0
-    
+
     res = []
     for K, V in dic.items():
         if V == 1: res.append(K)
