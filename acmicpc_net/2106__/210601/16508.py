@@ -3,6 +3,9 @@ from collections import defaultdict
 sys.stdin = open("./acmicpc_net/input.txt", "rt")
 input = sys.stdin.readline
 
+####################################################################
+# AC Other solution (https://subong0508.github.io/problem-solving/2021/01/29/BOJ-16508.html)
+###############################################################
 if __name__ == '__main__':
     T = input().rstrip()
     N = int(input())
@@ -91,7 +94,7 @@ if __name__ == '__main__':
 
         chk = [0] * len(T)
         for i in range(len(T)):
-            if T[i] in alphas: chk[i] = 1|
+            if T[i] in alphas: chk[i] = 1
         
         items.append((sum(chk), int(money), alphas))
     
