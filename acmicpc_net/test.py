@@ -90,7 +90,17 @@ f.close()
 ##################################################################
 # Test zone
 #############################################################
-arr = [0] * 5
-print(arr)
-arr[-1] = 10
-print(arr)
+from random import randrange
+f = open("./acmicpc_net/tc1.txt", "w")
+n = 500000
+k = 500
+
+print(n, k)
+f.write(str(n) + " " + str(k) + "\n")
+
+for _ in range(n):
+    t = randrange(0, 10)
+    f.write(str(randrange(0, 10)))
+    # print(t, end='')
+print("complete")
+f.close()
