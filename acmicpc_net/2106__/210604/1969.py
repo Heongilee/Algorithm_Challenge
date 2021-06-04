@@ -7,7 +7,6 @@ INF = int(10e9)
 if __name__ == '__main__':
     # N은 1,000보다 작거나 같은 자연수이고, M은 50보다 작거나 같은 자연수
     n, m = map(int, input().split())
-    board = [[0] * n for _ in range(n)] # <행>과 <열>의 HammingDist 길이는 board[i][j]
     dnas = [input().rstrip() for _ in range(n)]
     hammingDist = 0
     S = ""
@@ -25,5 +24,3 @@ if __name__ == '__main__':
         S += myList[0][0]
     print(S)
     print(hammingDist)
-
-        
