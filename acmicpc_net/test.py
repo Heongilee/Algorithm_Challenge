@@ -90,6 +90,8 @@ f.close()
 ##################################################################
 # Test zone
 #############################################################
+print(int(10e8))
+'''
 from random import randrange
 f = open("./acmicpc_net/tc1.txt", "w")
 n = 500000
@@ -104,3 +106,4 @@ for _ in range(n):
     # print(t, end='')
 print("complete")
 f.close()
+'''

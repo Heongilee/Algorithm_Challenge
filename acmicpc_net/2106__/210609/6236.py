@@ -2,7 +2,7 @@ import sys
 sys.stdin = open("./acmicpc_net/input.txt", "rt")
 input = sys.stdin.readline
 
-INF = int(10e9)
+INF = int(10e8)
 # K원으로 몇 묶음을 만들 수 있는지?
 def compare(K):
     cnt, bal = 1, 0
