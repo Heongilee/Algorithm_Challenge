@@ -5,7 +5,7 @@ input = sys.stdin.readline
 if __name__ == '__main__':
     n, k = map(int, input().split())    # 1 ≤ K < N, max(2, K) < N ≤ 1000
     board = [True] * (n + 1)
-    # board[0] = board[1] = False       # 문제 푸는데 상관 없음.
+    board[0] = board[1] = False       # 문제 푸는데 상관 없음.
     cnt = 0
     
     while True:
