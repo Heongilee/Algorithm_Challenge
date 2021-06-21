@@ -19,4 +19,3 @@ if __name__ == '__main__':
                 if cnt == k:
                     print(i)
                     sys.exit(0)
-    
