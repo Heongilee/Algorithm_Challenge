@@ -1,5 +1,6 @@
-ABCDE
-abcde
-01234
-FGHIJ
-fghij
+5
+push 3
+push 3
+size
+pop
+size
