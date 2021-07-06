@@ -3,31 +3,6 @@ sys.stdin = open("./acmicpc_net/input.txt", "rt")
 sys.setrecursionlimit(10 ** 6)
 input = sys.stdin.readline
 ##################################################################################################
-# AC in Python3, 1% MLE in Pypy3
-#############################################################################################
-def postOrder(lt, rt):
-    # base-case
-    if lt > rt: return
-
-    root = preOrder[lt]
-    idx = lt + 1
-
-    # root보다 큰 값을 찾는 과정
-    while idx <= rt:
-        if preOrder[idx] > root:
-            break
-        idx += 1
-    
-    postOrder(lt + 1, idx - 1)
-    postOrder(idx, rt)
-    print(root)
-
-
-if __name__ == '__main__':
-    preOrder = [int(line) for line in sys.stdin]
-    postOrder(0, len(preOrder) - 1)
-    
-##################################################################################################
 # 29% TLE in Python3
 #############################################################################################
 '''
