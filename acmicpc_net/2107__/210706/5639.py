@@ -1,36 +1,10 @@
 import sys
 sys.stdin = open("./acmicpc_net/input.txt", "rt")
-sys.setrecursionlimit(10 ** 6)
+sys.setrecursionlimit(10 ** 9)
 input = sys.stdin.readline
 ##################################################################################################
-# AC in Python3, 1% MLE in Pypy3
+# 29% TLE
 #############################################################################################
-def postOrder(lt, rt):
-    # base-case
-    if lt > rt: return
-
-    root = preOrder[lt]
-    idx = lt + 1
-
-    # root보다 큰 값을 찾는 과정
-    while idx <= rt:
-        if preOrder[idx] > root:
-            break
-        idx += 1
-    
-    postOrder(lt + 1, idx - 1)
-    postOrder(idx, rt)
-    print(root)
-
-
-if __name__ == '__main__':
-    preOrder = [int(line) for line in sys.stdin]
-    postOrder(0, len(preOrder) - 1)
-    
-##################################################################################################
-# 29% TLE in Python3
-#############################################################################################
-'''
 class Node(object):
     def __init__(self, data=None):
         self.data = data                # 양수형 정수
@@ -41,6 +15,7 @@ class Tree(object):
     def __init__(self, initNode):
         self.root = Node(initNode)
         self.curNode = self.root
+        self.pointer = None             # 후위 순회용 포인터
 
     def insertNumber(self, n):
         while self.curNode.parent != None and n > self.curNode.parent.data:
@@ -62,18 +37,23 @@ class Tree(object):
                 self.curNode = self.curNode.children[1]
 
     def preorderTraversal(self, ptr):
-        if ptr == None: return
+        pNode = self.pointer
+        self.pointer = ptr
+        if self.pointer == None:
+            self.pointer = pNode
+            return
 
-        self.preorderTraversal(ptr.children[0])
-        self.preorderTraversal(ptr.children[1])
-        print(ptr.data)
+        self.preorderTraversal(self.pointer.children[0])
+        self.preorderTraversal(self.pointer.children[1])
+        print(self.pointer.data)
+        self.pointer = pNode
 
 
 if __name__ == '__main__':
     tree = Tree(int(input()))
     for number in sys.stdin: tree.insertNumber(int(number))
     tree.preorderTraversal(tree.root)
-'''
+
 
 ##################################################################################################
 # RE(Index Error) :: 노드가 10000개 까지 올 수 있기 때문에, 배열크기는 2^10000이 필요하게 된다.
