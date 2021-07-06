@@ -8,8 +8,7 @@ if __name__ == '__main__':
     cycle = 0
     while True:
         T = str(t)
-        if 0 <= t <= 9:
-            T = "0" + T[-1]
+        if 0 <= t <= 9: T = "0" + T[-1]
         res = int(T[0]) + int(T[1])
         Res = str(res)
         T = T[1] + Res[-1]
