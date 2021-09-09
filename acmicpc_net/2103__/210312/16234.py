@@ -26,11 +26,9 @@ if __name__ == '__main__':
 
                     while dq:
                         x, y = dq.popleft()
-
                         for k in range(4):
                             xx = x + dx[k]
                             yy = y + dy[k]
-
                             if (0 <= xx < n and 0 <= yy < n) and (l <= abs(A[xx][yy] - A[x][y]) <= r) and not visited[xx][yy]:
                                 visited[xx][yy] = True
                                 dq.append((xx, yy))
