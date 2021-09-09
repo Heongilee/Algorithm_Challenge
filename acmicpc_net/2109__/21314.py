@@ -4,30 +4,26 @@ input = sys.stdin.readline
 
 if __name__ == '__main__':
     line = input().rstrip()
-    if any (line[i] == 'K' for i in range(len(line))):
-        maxV = ''
-        minV = ''
-        lt, rt = 0, 0
-        while lt < len(line):
-            flag = False
-            while rt < len(line) and line[rt] != 'K':
-                rt += 1
-            if rt >= len(line):
-                minV += str(10 ** (rt - lt - 1))
-                maxV += ('1' * (rt - lt))
-            elif line[rt] == 'K':
-                maxV += str(5 * (10 ** (rt - lt)))
-                if lt == rt:
-                    minV += '5'
-                else:
-                    minV += str(10 ** (rt - lt - 1)) + '5'
+    maxV = ''
+    minV = ''
+    lt, rt = 0, 0
+    while lt < len(line):
+        flag = False
+        while rt < len(line) and line[rt] != 'K':
             rt += 1
-            lt = rt
-        print(maxV)
-        print(minV)
-    else:
-        print('1' * len(line))
-        print(10 ** (len(line) - 1))
+        if rt >= len(line):
+            minV += str(10 ** (rt - lt - 1))
+            maxV += ('1' * (rt - lt))
+        elif line[rt] == 'K':
+            maxV += str(5 * (10 ** (rt - lt)))
+            if lt == rt:
+                minV += '5'
+            else:
+                minV += str(10 ** (rt - lt - 1)) + '5'
+        rt += 1
+        lt = rt
+    print(maxV)
+    print(minV)
     
 
 ####################################################################################
