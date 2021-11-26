@@ -1,1 +1,3 @@
-qu'est-ce qu'il mange aujourd'hui
+6
+2
+1 6 9 3 6 7
