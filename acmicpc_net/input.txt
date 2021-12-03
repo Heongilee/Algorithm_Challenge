@@ -1,8 +1,2 @@
-ZGBG
-X
-EE
-AAB
-AABA
-AABB
-BCBABCC
-*
+4 2
+1 1 1 1
