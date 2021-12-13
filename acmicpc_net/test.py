@@ -1,12 +1,3 @@
-#################################################################
-#
-a = [0, 0, 0, 0, 0]
-
-b = a[:]
-print(b) # [0, 0, 0, 0, 0]
-b[0] = 1
-print(a, b) # [0, 0, 0, 0, 0] [1, 0, 0, 0, 0]
-
 '''
 res = ~int('0b0000', 2) + 1
 print(bin(res))
@@ -120,18 +111,15 @@ f.close()
 #############################################################
 # print(int(10e8))
 '''
-from random import randrange
-f = open("./acmicpc_net/tc1.txt", "w")
-n = 500000
-k = 500
-
-print(n, k)
-f.write(str(n) + " " + str(k) + "\n")
-
-for _ in range(n):
-    t = randrange(0, 10)
-    f.write(str(randrange(0, 10)))
-    # print(t, end='')
-print("complete")
-f.close()
 '''
+# from random import randrange
+f = open("./acmicpc_net/tc1.txt", "w")
+n = 600
+
+f.write(str(n) + "\n")
+l = 0
+for i in range(1, n):
+    f.write(str(i) + " " + str(n - i) + " ")
+    l += 2
+print(f"테케 생성 완료, 사이즈 : {l}")
+f.close()
