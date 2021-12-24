@@ -10,20 +10,20 @@ M개의 소들의 길이 양 방향으로 그려져 있고 각 길은 C[i] 마�
 def dijkstra(start_node):
     queue = []
     
-    hq.heappush(queue, (start_node, 0))
+    hq.heappush(queue, (0, start_node))
     distance[start_node] = 0
     
     while queue:
-        now, dist = hq.heappop(queue)
+        dist, now = hq.heappop(queue)
         
         if distance[now] < dist:
             continue
         
-        for b, c in graph[now]:
-            cost = dist + c
-            if cost < distance[b]:
-                distance[b] = cost
-                hq.heappush(queue, (b, cost))
+        for node, fee in graph[now]:
+            cost = dist + fee
+            if cost < distance[node]:
+                distance[node] = cost
+                hq.heappush(queue, (cost, node))
             
 INF = int(10e9)
 if __name__ == '__main__':
